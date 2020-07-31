@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function check(){
+	var ag = document.angelForm.angel;
+	var flag = true;
+	for(i=0; i<ag.length; i++){
+		if(ag[i].checked){
+			flag=false;
+			break;
+		}
+	}
+	if(flag){
+		alert("선택하세요.");
+		return false;
+	}
+}
+
+</script>
+
+</head>
+<body>
+
+<!--  이상형을 선택하지 않고 찜하면 이상형을 선택하세요!
+		선택하고 전송하면 이상형의 사진을 보여준다
+		step2.RadioServlet의 doGet()
+ -->
+ 당신이 좋아하는 아이돌은?<br>
+ <form method="get" action="RadioServlet" name="angelForm" onsubmit="result check()">
+ <input type="radio" name="angel" value="yeonwoo">연우<br>
+ <input type="radio" name="angel" value="seolhyun">설현<br>
+ <input type="radio" name="angel" value="jisoo">지수<br>
+ <input type="submit" value="찜하기">
+ </form>
+
+</body>
+</html>

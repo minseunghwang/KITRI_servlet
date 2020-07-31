@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function ItemCheck(){
+	var gen = document.menuForm.gender;
+	var ki = document.menuForm.kisoo;
+	var na = document.menuForm.names;
+	
+	var flag = true;
+
+	for(i=0;i<gen.length;i++){
+		if(gen[i].checked){
+			flag=false;
+			break;
+		}
+	}
+	if(flag){
+		alert("성별 입력 하세요");
+		return false;
+	}
+	
+	
+	if(ki.value==""){
+		alert("기수를 입력하세요.");
+		ki.focus();
+		return false;
+	}
+	
+	var flag1 = window.isNaN(ki.value);
+	if(flag1){
+		alert("숫자만 입력하세요.");
+		return false;
+	}
+	
+	var naflag = true;
+	for(i=0;i<na.length;i++){
+		if(na[i].checked){
+			naflag=false;
+			break;
+		}
+	}
+	if(naflag){
+		alert("이름을 선택하세요.");
+		return false;
+	}
+}
+	
+</script>
+
+</head>
+<body>
+	
+	<form action="MultiServlet" method="get" name="menuForm"
+		onsubmit="return ItemCheck()">
+		<input type="radio" name="gender" value="남자">남자<br>
+		<input type="radio" name="gender" value="여자">여자<br>
+		
+		기수:<input type="text" name="kisoo"><br>
+		
+		<input type="checkbox" name="names" value="백승석">백승석<br> <input
+			type="checkbox" name="names" value="민전기">민전기<br> <input
+			type="checkbox" name="names" value="이준우">이준우<br> <input
+			type="submit" value="전송">
+	</form>
+
+</body>
+</html>

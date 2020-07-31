@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function check(){
+	var friendNameTxt = document.nameForm.friendName;
+	if(friendNameTxt.value==""){
+		alert("빈공란이 존재합니다.");
+		friendNameTxt.value="";
+		friendNameTxt.focus();
+		return false;
+	}
+}
+</script>
+
+</head>
+<body>
+
+	<!-- 
+	step1.TextServlet을 생성하여 doGet()로 처리
+	친구이름은 머멈 입니다.
+	javascript로 빈공란을 체크하여 전송시키지 않도록 한다.
+	name()으로 함수명을 잡으면 안된다.
+	왜냐하면 속성 name과 겹치기 때문에 인식하지 못한다.
+ -->
+	<form method="get" name="nameForm" action="TextServlet" onsubmit="return check()">
+		친구이름:<input type="text" name="friendName">
+		<input type="submit" value="서버전송">
+	</form>
+
+</body>
+</html>
