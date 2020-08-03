@@ -1,4 +1,4 @@
-package step4_4;
+package step5_6;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LifeCycleServlet2
+ * Servlet implementation class EnterServlet
  */
-@WebServlet("/LifeCycleServlet2")
-public class LifeCycleServlet2 extends HttpServlet {
+@WebServlet("/EnterServlet")
+public class EnterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LifeCycleServlet2() {
+    public EnterServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
